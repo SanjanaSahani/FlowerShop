@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Contact() {
     return (
-        <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
+        <div className="relative flex items-top justify-center min-h-[600px] font-serif bg-white sm:items-center sm:pt-0">
             <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div className="mt-8 overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2">
@@ -22,7 +22,7 @@ export default function Contact() {
                                     stroke-linejoin="round"
                                     stroke-width="1.5"
                                     viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
+                                    className="w-8 h-8 text-pink-500"
                                 >
                                     <path
                                         stroke-linecap="round"
@@ -50,7 +50,7 @@ export default function Contact() {
                                     stroke-linejoin="round"
                                     stroke-width="1.5"
                                     viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
+                                    className="w-8 h-8 text-pink-500"
                                 >
                                     <path
                                         stroke-linecap="round"
@@ -72,7 +72,7 @@ export default function Contact() {
                                     stroke-linejoin="round"
                                     stroke-width="1.5"
                                     viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
+                                    className="w-8 h-8 text-pink-500"
                                 >
                                     <path
                                         stroke-linecap="round"
@@ -82,7 +82,7 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    info@acme.org
+                                    info@Flora.org
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                                     name="name"
                                     id="name"
                                     placeholder="Full Name"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-pink-500 focus:outline-none"
                                 />
                             </div>
 
@@ -110,7 +110,7 @@ export default function Contact() {
                                     name="email"
                                     id="email"
                                     placeholder="Email"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-pink-500 focus:outline-none"
                                 />
                             </div>
 
@@ -123,13 +123,13 @@ export default function Contact() {
                                     name="tel"
                                     id="tel"
                                     placeholder="Telephone Number"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-pink-500 focus:outline-none"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
+                                className="md:w-32 bg-pink-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-pink-600 transition ease-in-out duration-300"
                             >
                                 Submit
                             </button>
