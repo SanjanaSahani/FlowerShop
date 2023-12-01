@@ -1,8 +1,24 @@
-# React + Vite
+# Flower Shop Website 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Flower Shop Website created using Tailwind CSS and React JS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Utilizes Tailwind CSS for efficient styling.
+- Components built with React JS for dynamic content and interactivity.
+
+## Getting Started
+
+These instructions will help you get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js installed on your computer.
+
+### Installation
+
+1. Clone the repository:
+
+git clone https://github.com/SanjanaSahani/FlowerShop.git
