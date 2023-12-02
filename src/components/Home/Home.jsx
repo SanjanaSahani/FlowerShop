@@ -9,8 +9,8 @@ export default function Home() {
         <div className="mx-auto w-full font-serif max-w-7xl">
             <aside className="relative overflow-hidden text-black rounded-lg sm:mx-16 mx-2 sm:py-16">
                 <div className="relative z-10 max-w-screen-xl px-4  pb-20 pt-10 sm:py-24 mx-auto sm:px-6 lg:px-8">
-                    <div className="max-w-xl sm:mt-1 mt-80 space-y-8 text-center sm:text-right sm:ml-auto">
-                        <h2 className="text-4xl font-bold sm:text-5xl">
+                    <div className="max-w-xl sm:mt-1 mt-[550px] space-y-8 text-center sm:text-right sm:ml-auto">
+                        <h2 className="text-4xl text-pink-800 font-bold sm:text-5xl sm:text-black">
                             Fresh Flower
                             <span className="hidden text-pink-400 sm:block text-4xl">Natural & Beautiful Flowers</span>
                             <p className='text-sm  font-light text-slate-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsum? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ducimus repellendus excepturi rerum dolor officia velit distinctio numquam delectus et? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, vero blanditiis ab nesciunt nemo fugiat necessitatibus repellat vel tempora dolor.</p>
@@ -33,7 +33,7 @@ export default function Home() {
 
             {/* for category  */}
 
-            <div className='flex justify-center items-center gap-6 mt-32 py-4 '>
+            <div className='flex justify-center items-center flex-wrap gap-6 mt-32 py-4 mx-2'>
                 <h4 className='text-pink-500 font-semibold text-2xl hover:text-pink-700'>All</h4>
                 <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>CACTUSES</h4>
                 <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>EXOTIC</h4>
@@ -43,7 +43,7 @@ export default function Home() {
                 <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>WINTER</h4>
             </div>
 
-            <div className='flex flex-wrap gap-6 mt-24 mb-32'>
+            <div className='flex justify-center items-center  flex-wrap gap-6 mt-24 mb-32'>
                 <Cards imageUrl="https://images.unsplash.com/photo-1592744536004-be419c811f4b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhY3R1cyUyMHBsYW50fGVufDB8fDB8fHww"
                     alt="cactus" name="MAJESTY PALM" price="$134" />
                 <Cards imageUrl="https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="cactus" name="TINY DAHELIA" price="$134" />
@@ -106,7 +106,7 @@ export default function Home() {
                     <h1 className='text-4xl font-semibold text-slate-700 '>From our Blog</h1>
                     <p className='text-xl text-slate-400 my-10'>A perfect blend of creativity, energy, communication, happiness <br /> and love. Let us arrange a smile for you.</p>
                 </div>
-                <div className='flex justify-center items-center gap-16'>
+                <div className='flex justify-center items-center flex-wrap gap-16'>
                     <Cardd imagesUrl="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/04/blog-feature-img-1.jpg" Heading="Flower Power" />
 
                     <Cardd imagesUrl="https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/blog-feature-img-3.jpg" Heading="Local Florists" />

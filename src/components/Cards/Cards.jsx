@@ -17,7 +17,7 @@ function Cards({name,price,imageUrl}) {
       type="button"
       class="mt-4 w-[266px] rounded-sm bg-pink-600 px-6 py-1 text-[14px] font-semibold text-white shadow-sm hover:bg-pink-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500"
     >
-      Buy
+      Add to Cart
     </button>
   </div>
 </div>
