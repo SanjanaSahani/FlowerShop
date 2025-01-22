@@ -10,6 +10,7 @@ import Contact from './components/Contact/Contact.jsx'
 import Gallery from './components/Gallery/Gallery.jsx'
 import Sign from './components/Sign.jsx'
 import Cart from './components/Cart.jsx'
+import Order from './components/Order/Order.jsx'
 
 
 const router = createBrowserRouter([
@@ -42,7 +43,10 @@ const router = createBrowserRouter([
         path: "cart",
         element: <Cart/>
       },
-      
+      {
+        path: "order",
+        element: <Order/>
+      },
     ]
   }
 ])

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-export default function Header() {
+export default function Header({cartItems}) {
     return (
         <header className="shadow sticky z-50 top-0">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -24,7 +24,12 @@ export default function Header() {
                             <div className='flex '><img className='h-4 w-4 fill-white mix-blend-screen mr-1'
                              src="https://cdn-icons-png.flaticon.com/512/3225/3225209.png" alt="logo" />
                               Cart
-                            
+                             {/* Show item count in a badge */}
+                             {cartItems.length > 0 && (
+                                    <span className="absolute top-2 right-[8%] bg-pink-600 text-white font-bold rounded-full px-2 py-1 text-xs">
+                                        {cartItems.length}
+                                    </span>
+                                )}
                             </div>
                         </Link>
                     </div>

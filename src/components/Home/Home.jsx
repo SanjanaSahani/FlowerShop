@@ -1,10 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react'
+import { Link, useOutletContext } from 'react-router-dom';
 import Cards from '../Cards/Cards';
 import Cardd from '../Cards/Cardd';
 
+const initialCards = [
+    { id: 1, category: 'CACTUSES', imageUrl: 'https://images.unsplash.com/photo-1592744536004-be419c811f4b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhY3R1cyUyMHBsYW50fGVufDB8fDB8fHww', name: 'Golden Cactus Palm', price: '$99' },
+    { id: 2, category: 'EXOTIC', imageUrl: 'https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg?auto=compress&cs=tinysrgb&w=600', name: 'Exotic Tiny Dahlia', price: '$149' },
+    { id: 3, category: 'GREENS', imageUrl: 'https://wallmantra.com/wp-content/uploads/SmlaplpotTilkiliBlue2.png', name: 'Blue Tilkili', price: '$220' },
+    { id: 4, category: 'POPULAR', imageUrl: 'https://wallmantra.com/wp-content/uploads/AVA-MJ-09c.jpg', name: 'White Majesty', price: '$180' },
+    { id: 5, category: 'EXOTIC', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-1.jpg', name: 'Pink Radiance', price: '$140' },
+    { id: 6, category: 'EXOTIC', imageUrl: 'https://cdn.pixabay.com/photo/2018/04/22/11/27/flower-3340796_1280.jpg', name: 'White Blossom', price: '$200' },
+    { id: 7, category: 'WINTER', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-3.jpg', name: 'Winter Queen', price: '$160' },
+    { id: 8, category: 'CACTUSES', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-9.jpg', name: 'Spiky Majesty', price: '$110' },
+    { id: 9, category: 'CACTUSES', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-8.jpg', name: 'Royal Cactus', price: '$190' },
+    { id: 10, category: 'GREENS', imageUrl: 'https://cdn.pixabay.com/photo/2017/02/16/13/38/flower-2071522_1280.jpg', name: 'Green Skytip', price: '$240' },
+    { id: 11, category: 'POPULAR', imageUrl: 'https://wallmantra.com/wp-content/uploads/AVA-MJ-09a.jpg', name: 'Majestic Popular', price: '$150' },
+    { id: 12, category: 'WINTER', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-4.jpg', name: 'Frosted Lily', price: '$175' },
+    { id: 13, category: 'WINTER', imageUrl: 'https://fiorello.qodeinteractive.com/wp-content/uploads/2018/05/port-gallery-img-7.jpg', name: 'Snow Bloom', price: '$180' },
+    { id: 14, category: 'WINTER', imageUrl: 'https://cdn.pixabay.com/photo/2016/04/19/11/30/blossom-1338454_1280.jpg', name: 'Blossom Frost', price: '$165' },
+    { id: 15, category: 'POPULAR', imageUrl: 'https://cdn.pixabay.com/photo/2018/04/29/04/37/flower-3359072_1280.jpg', name: 'Popular Rose', price: '$145' },
+    { id: 16, category: 'POPULAR', imageUrl: 'https://cdn.pixabay.com/photo/2016/06/05/22/20/plant-1438317_1280.jpg', name: 'Star Plant', price: '$130' },
+];
 
 export default function Home() {
+
+    const { addToCart } = useOutletContext();
+    const [selectedCategory, setSelectedCategory] = useState('All');
+
+    const filteredCards = selectedCategory === 'All' ? initialCards : initialCards.filter((card) => card.category === selectedCategory);
+
+
     return (
         <div className="mx-auto w-full font-serif max-w-7xl">
             <aside className="relative overflow-hidden text-black rounded-lg sm:mx-16 mx-2 sm:py-16">
@@ -31,32 +56,29 @@ export default function Home() {
                 </div>
             </aside>
 
-            {/* for category  */}
+                  {/* for category  */}
 
-            <div className='flex justify-center items-center flex-wrap gap-6 mt-32 py-4 mx-2'>
-                <h4 className='text-pink-500 font-semibold text-2xl hover:text-pink-700'>All</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>CACTUSES</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>EXOTIC</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>GREENS</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl  hover:text-pink-700'>POPULAR</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>VARIOUS</h4>
-                <h4 className='text-slate-500 font-semibold text-2xl hover:text-pink-700'>WINTER</h4>
+                  <div className='flex justify-center items-center flex-wrap gap-6 mt-32 py-4 mx-2'>
+                {['All', 'CACTUSES', 'EXOTIC', 'GREENS', 'POPULAR', 'WINTER'].map((category) => (
+                    <h4
+                        key={category}
+                        className={`cursor-pointer ${selectedCategory === category ? 'text-pink-500' : 'text-slate-500'
+                            } font-semibold text-2xl hover:text-pink-700`}
+                        onClick={() => setSelectedCategory(category)}
+                    >
+                        {category}
+                    </h4>
+                ))}
             </div>
 
-            <div className='flex justify-center items-center  flex-wrap gap-6 mt-24 mb-32'>
-                <Cards imageUrl="https://images.unsplash.com/photo-1592744536004-be419c811f4b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhY3R1cyUyMHBsYW50fGVufDB8fDB8fHww"
-                    alt="cactus" name="MAJESTY PALM" price="$134" />
-                <Cards imageUrl="https://images.pexels.com/photos/1058771/pexels-photo-1058771.jpeg?auto=compress&cs=tinysrgb&w=600" alt="cactus" name="TINY DAHELIA" price="$134" />
-                <Cards imageUrl="https://wallmantra.com/wp-content/uploads/SmlaplpotTilkiliBlue2.png" alt="tilkiliblue" name="TILKILIBLUE" price="$234" />
-                <Cards imageUrl="https://wallmantra.com/wp-content/uploads/AVA-MJ-09c.jpg" alt="cactus" name="AVAMJ WHITE" price="$184" />
-                <Cards imageUrl="https://wallmantra.com/wp-content/uploads/AVA-MJ-09a.jpg" alt="cactus" name="AVA-MJ" price="$134" />
-                <Cards imageUrl="https://i.ebayimg.com/images/g/DD8AAOSwl41kgE4I/s-l1200.jpg" alt="cactus" name="TILKIWHITE" price="$634" />
-                <Cards imageUrl="https://wallmantra.com/wp-content/uploads/PTH-SmlAp-P-Jasmine-ST-1.png" alt="JASMINE" name="JASMINE" price="$334" />
-                <Cards imageUrl="https://wallmantra.com/wp-content/uploads/AVA-MJ-02c_4.jpg" alt="cactus" name="AVAMJ PINK" price="$144" />
+            <div className='flex justify-center items-center flex-wrap gap-6 mt-24 mb-32'>
+                {filteredCards.map((card) => (
+                    <Cards key={card.id} {...card} onAddToCart={() => addToCart(card)} />
+                ))}
             </div>
 
             <div className='bg-pink-100 py-28 flex justify-center items-center flex-wrap rounded-tl-3xl rounded-br-3xl'>
-                <div className='w-[400px]  rounded-md border'><video src="./image/video (1080p).mp4" autoPlay loop muted></video></div>
+                <div className='w-[400px]  rounded-md border sm:m-2'><video src="./image/video (1080p).mp4" autoPlay loop muted></video></div>
                 <div className='ml-14'>
                     <h2 className='text-4xl font-semibold text-slate-700 ' >Suprise Your <span className='text-pink-500'>Valentine!</span>
                         <br />  Let us arrange a smile.</h2>
